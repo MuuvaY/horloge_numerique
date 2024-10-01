@@ -1,0 +1,65 @@
+/* Styles généraux */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Conteneur principal */
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+/* Titre */
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Boutons */
+#btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+#btn button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style pour chaque bouton */
+#btn button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+#btn button:last-child {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Hover effects */
+#btn button:hover:first-child {
+  background-color: #0056b3;
+}
+
+#btn button:hover:last-child {
+  background-color: #218838;
+}
