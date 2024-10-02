@@ -11,26 +11,43 @@ btnPause.className = "btnStop";
 
 selectionnerBtn.append(btnDemarer, btnPause);
 
-const test = document.querySelector(".btnStart");
+let count = 0;
+let minutes = 0;
+let heures = 0;
+// console.log(count);
 
-test.addEventListener("click", start);
+const startButton = document.querySelector(".btnStart");
+
+startButton.addEventListener("click", start);
 
 function start() {
-  console.log(test);
+  // console.log(startButton);
+  intervalID = setInterval(test, 1);
+
+  function test() {
+    if (count === 59) {
+      count = 0;
+      minutes++;
+    } else {
+      count++;
+    }
+
+    if (minutes === 59) {
+      minutes = 0;
+      heures++;
+    }
+
+    const displayCompteur = document.querySelector(".compteur");
+    displayCompteur.innerHTML = `${heures}:${minutes},${count}`;
+    // console.log(count);
+  }
 }
 
-// setInterval(maFonction, 1000, "Parametre 1");
+const stopButton = document.querySelector(".btnStop");
 
-// function maFonction(a, b) {
-//   console.log(a);
-//   console.log(b);
-// }
+stopButton.addEventListener("click", stop);
 
-// const intervalID = setInterval(myCallback, 500, "Parameter 1", "Parameter 2");
-
-// function myCallback(a, b) {
-//   // Your code here
-//   // Parameters are purely optional.
-//   console.log(a);
-//   console.log(b);
-// }
+function stop() {
+  // console.log(stopButton);
+  clearInterval(intervalID);
+}
